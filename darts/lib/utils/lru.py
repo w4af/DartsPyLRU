@@ -668,7 +668,7 @@ class SynchronizedLRUDict(object):
         """
 
         with self.__lock:
-            return iter(tuple(self.__dict.values()))
+            return iter(tuple(self.__dict.itervalues()))
 
     def iteritems(self):
 

@@ -28,7 +28,7 @@ setup(
     version = "0.5.1",
     description='Simple dictionary with LRU behaviour',
     zip_safe=True,
-    packages = ['darts.lib.utils.lru'],
+    packages = ['darts.lib.utils'],
     author = "Deterministic Arts",
     author_email = "contact@deterministic-arts.de",
     license = "MIT"

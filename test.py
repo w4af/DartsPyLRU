@@ -98,7 +98,7 @@ class AutoCacheThreadingTest(TestCase):
                     self.assertEqual("R(%r)" % (i,), answer)
             with start_lock:
                 ready_list.append(1)
-                ready_condition.notifyAll()
+                ready_condition.notify_all()
 
         with start_lock:
         
@@ -110,7 +110,7 @@ class AutoCacheThreadingTest(TestCase):
             # send them the start signal
 
             start_now = True
-            start_condition.notifyAll()
+            start_condition.notify_all()
 
         # Must happen in a different `with` block, so that the
         # mutex gets released, and the threads have a chance to

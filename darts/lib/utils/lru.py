@@ -853,7 +853,7 @@ class AutoLRUCache(object):
                         placeholder._state = discarded
                         conditions.append(placeholder._condition)
                 while conditions:
-                    conditions.pop().notifyAll()
+                    conditions.pop().notify_all()
                         
     def load(self, key, default=None):
 
@@ -919,7 +919,7 @@ class AutoLRUCache(object):
                     del self.__loading[key]
                     placeholder._value = sys.exc_info()
                     placeholder._state = failed
-                    placeholder._condition.notifyAll()
+                    placeholder._condition.notify_all()
                     raise CacheLoadError(key, placeholder._value)
                 else:
                     # Do not notify the condition variable, since
@@ -934,7 +934,7 @@ class AutoLRUCache(object):
                     placeholder._value = value
                     placeholder._state = available
                     self.__cache[key] = value
-                    placeholder._condition.notifyAll()
+                    placeholder._condition.notify_all()
                 else:
                     # Do not notify the condition variable, since
                     # that should already have been done by whoever

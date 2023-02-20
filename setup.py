@@ -21,15 +21,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name = "darts_util_lru",
-    version = "0.5",
+    version = "0.5.1",
     description='Simple dictionary with LRU behaviour',
     zip_safe=True,
-    packages = find_packages(),
-    namespace_packages=['darts', 'darts.lib', 'darts.lib.utils'],
+    packages = ['darts.lib.utils.lru'],
     author = "Deterministic Arts",
     author_email = "contact@deterministic-arts.de",
     license = "MIT"
